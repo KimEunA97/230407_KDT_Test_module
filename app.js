@@ -1,27 +1,37 @@
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import App from './app';
+
+
+
+
+
+
+
 import http from 'http'
 
 
 const server = http.createServer(function (req, res) {
 
+  if (req.method === 'GET') {
 
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end();
 
-
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.end();
-
+  }
 
 })
 
 server.listen(3050, function (error) {
 
 
-  if(error) {
+  if (error) {
 
     console.log("서버 에러");
 
   }
 
-  else{
+  else {
 
     console.log("서버 구동 중...");
 
