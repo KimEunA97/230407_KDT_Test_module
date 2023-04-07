@@ -1,9 +1,11 @@
 import http from 'http'
+import fs from 'fs'
 
 
 const server = http.createServer(function (req, res) {
 
 
+  fs.readFileSync('./index.html')
 
 
   res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -15,13 +17,13 @@ const server = http.createServer(function (req, res) {
 server.listen(3050, function (error) {
 
 
-  if(error) {
+  if (error) {
 
     console.log("서버 에러");
 
   }
 
-  else{
+  else {
 
     console.log("서버 구동 중...");
 
@@ -29,4 +31,3 @@ server.listen(3050, function (error) {
 
 
 })
-
